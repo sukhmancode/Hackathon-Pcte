@@ -13,6 +13,15 @@ let isDragging = false,
 // Get the number of cards that can fit in the carousel at once
 let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
 
+document.addEventListener('DOMContentLoaded', function () {
+    // initialization of aos
+    AOS.init({
+      duration: 1250,
+      once: true
+    });
+  });
+  
+
 // Insert copies of the last few cards to beginning of carousel for infinite scrolling
 carouselChildrens
 	.slice(-cardPerView)
