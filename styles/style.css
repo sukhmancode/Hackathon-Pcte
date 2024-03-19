@@ -7,7 +7,10 @@
     --black:#000;
     --white:#ffff;
 }
-
+a{
+    text-decoration: none;
+    color: inherit;
+}
 *{
     padding: 0;
     margin: 0;
@@ -18,6 +21,14 @@ html{
 }
 body{
     font-family: var(--texuirana);
+}
+.sticky{
+    transform: translateY(-10%);
+    z-index: 111;
+    width: 100%;
+    margin: 0;
+    position: fixed;
+    background-color: #000;
 }
 button{
     font-family: var(--texuirana);
@@ -33,19 +44,21 @@ nav{
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #cccccc60;
+    transition: all 0.2 ease-in;
 }
 .nav-elements{
     color: var(--white);
-    font-weight: 500;
+    font-weight: 800;
     display: flex;
     gap: 2rem;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
 }
 .dashboard-btn button{
     border: none;
     background-color: var(--black);
     padding: 1.6rem;
     outline: none;
+    border: 1px solid #ccc;
     font-weight: 700;
     transition: all 0.2s ease-in;
     color: var(--white);
@@ -53,6 +66,7 @@ nav{
 
 }
 .dashboard-btn button:hover{
+    border: 1px solid var(--black);
     transform: scale(1.2);
     border-radius: 0rem;
     cursor: pointer;
@@ -82,14 +96,18 @@ nav{
     display: flex;
 }
 .jcb-hero h1{
-    width: 50%;
+    width: 40%;
     font-size: 4rem;
     color: var(--white);
+}
+.dine-txt{
+    font-size: 5rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .jcb-hero p{
     color: #fff;;
     font-size: 1.8rem;
-    width: 50%;
+    width: 40%;
 }
 .hamburger{
     display: none;
@@ -100,8 +118,9 @@ nav{
     background-image:
     linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url(
-        '/Hackathon-Pcte/images/jcb2.jpg');
+        '/Hackathon-Pcte/images/jcb3.jpg');
     background-repeat: no-repeat;
+    height: 100vh;
 
 }
 .jcb-hero{
@@ -114,7 +133,7 @@ nav{
 }
 .jcb-hero button{
     margin-top: 2rem;
-   transform: translateX(-520px);
+   transform: translateX(-200px);
     padding: 1.6rem;
     cursor: pointer;
     background-color: transparent;
@@ -122,8 +141,8 @@ nav{
     color:var(--white);
     border-radius: 3.2rem;
     width: 200px;
-    font-size: 1.6rem;
-    font-weight: 600;   
+    font-size: 2rem;
+    font-weight: 800;   
     transition: all 0.2s ease-in;
 }
 .jcb-hero button:hover{
@@ -136,32 +155,98 @@ nav{
     margin-top: 5rem;
     display: flex;
     justify-content: space-between;
-    padding: 2rem 5rem;
+    padding: 2rem 25rem;
     align-items: center;
 }
 .images-grid2{
     display: flex;
-    justify-content: center;
-    gap: 5rem;
+    gap: 1rem;
+}
+.card-person {
+    margin-bottom: 2rem;
+    display: flex;
+}
+.card-person h2{
+    font-size: 3rem;
 }
 .jcb-hero-tagline{
     line-height: 2.7rem;
 }
 .house2{
-    width: 950px;
+    margin-left: 22rem;
+    width: 500px;
+    height: 300px;
     border-radius: 32px;
+    margin-block: 1rem;
+
 }
 .house3{
+    margin-right: 25rem;
     border-radius: 32px;
-    height: 400px;
-    width: 450px;
-}
-.grid-txt h1{
-    font-size: 3rem;
+    width: 520px;
+    height: 630px;
 }
 .house1{
-    border-radius: 3rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+.house1:hover{
+   filter: grayscale(60%);
+   cursor: pointer;
+    }
+    .house1:hover::after{
+        content: "Architect";
+        background-color: black;
+        position: absolute;
+        z-index: 2;
+    }
+    .house2:hover{
+   cursor: pointer;
+        filter: grayscale(60%);
+         }
+         .house3:hover{
+   cursor: pointer;
+
+            filter: grayscale(60%);
+             }
+         
+
+.grid-card-txt{
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .card{
+    margin: 2rem;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    transition: all 0.2s ease-in;
+  }
+  .card:hover{
+    border: 1px solid var(--black);
+    transform: scale(1.1);
+  }
+.card p{
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.house1{
+    border-radius: 3rem;
+    width: 530px;
+    height: 300px;
+
+}
+
 
 /*Testimonial*/
 .review-heading{
@@ -228,7 +313,7 @@ nav{
 }
 .carousel .card {
 	scroll-snap-align: start;
-	height: 342px;
+	height: 252px;
 	list-style: none;
 	background: #fff;
 	cursor: pointer;
@@ -261,13 +346,43 @@ nav{
 /*Footer*/
 
 footer{
-    padding: 2rem;
+    margin-top: 5rem;
     display: flex;
-justify-content: space-around;
-align-items: center;
+    padding-block: 4rem;
+    padding-inline-start: 1rem;
+    background-color: var(--black);
+    justify-content: space-between;
+    align-items: center;
+}
+.links{
+    color: var(--white);
+}
+.links h2{
+    font-size: 2.7rem;
+}
+.links p{
+    line-height: 3rem;
+    font-size: 1.8rem;
+}
+.sub-footer{
+    border-top: 1px solid #ccc;
+    padding: 1rem;
+    text-align: center;
+    font-size: 2rem;
+    color: var(--white);
     background-color: var(--black);
 }
+input[type="text"]{
+    margin-top: 1rem;
+    border: none;
+    background: transparent;
+    border: 1px solid #ccc;
+    outline: none;
+    padding: 1.6rem;
+    color: var(--white);
+}
 .footer-elements{
+    transform: translateX(100%);
     color: var(--white);
 }
 footer h2{
@@ -275,16 +390,66 @@ footer h2{
     font-size: 2.5rem;
 }
 .footer-elements p{
+    line-height: 2.8rem;
     font-size: 1.8rem;
 }
-.newsletter{
-    color: var(--white);
+.footer-logo{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
+.foot-logo img{
+    width: 200px;
+}
+.newsletter{
+   transform: translateX(100%);
+    color: var(--white);
 
-@media screen and (max-width: 900px) {
+}
+.newsletter p{
+    font-size: 1.6rem;
+    width: 90%;
+    line-height: 2.4rem;
+}
+.social-handles{
+    margin-top: 1rem;
+    gap: 2rem;
+    display: flex;
+}
+.social-handles img{
+    width: 25px;
+}
+.newsletter{
+    width: 50%;
+}
+@media screen and (max-width: 1030px) {
 	.wrapper .carousel {
 		grid-auto-columns: calc((100% / 2) - 9px);
 	}
+    .house1{
+        width: 100%;
+        height: 100%;
+    }
+    .house2{
+        height: 100%;
+        width: 100%;
+        margin-left: 0rem;
+    }
+    .house3{
+        height: 100%;
+        width: 100%;
+        margin-right: 0rem;
+    }
+    .images-grid{
+        flex-direction: column;
+        padding: 2rem;
+    }
+    .images-grid2{
+        flex-direction: column;
+    }
+    .jcb-hero button{
+        transform: translate(0);
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -294,12 +459,52 @@ footer h2{
 }
 
 @media screen and (max-width:768px) {
+    html{
+        font-size: 55%;
+    }
     
-    .nav-elements.active{
+    .nav-elements.hide{
         display: none;
+      
+    }
+    .jcb-container{
+        background-size: cover;
+    }
+    .nav{
+        position: relative;
+    }
+    .nav-elements{
+        padding: 2rem;
+        top: 80%;
+        right: 40%;
+        position: absolute;
+        background-color: black;
+       height: fit-content;
+        flex-direction: column;
     }
     .hamburger{
         display: flex;
     }
-    
+    .jcb-hero{
+        padding: 3rem;
+        align-items: flex-start;
+    }
+    .jcb-hero h1{
+        width: 100%;
+
+    }
+    .jcb-hero p{
+        width: 100%;
+    }
+  
+    footer{
+        flex-direction: column;
+        gap: 4rem;
+    }
+    .footer-elements{
+        transform: translate(0);
+    }
+    .newsletter{
+        transform: translateX(50%);
+    }
 }

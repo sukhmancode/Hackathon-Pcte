@@ -21,6 +21,45 @@ carouselChildrens
 		carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
 	});
 
+
+    const hamburger = document.querySelector('.hamburger');
+const navLink = document.querySelector('.nav-elements');
+
+hamburger.addEventListener('click', () => {
+  navLink.classList.toggle('hide');
+});
+
+    window.addEventListener('scroll', function(event) {
+        const navigationBar = document.querySelector('.nav');
+        
+        if (window.scrollY > 50) {
+        navigationBar.classList.add('sticky');
+        } else {
+        navigationBar.classList.remove('sticky');
+        }
+       });
+
+
+       const inputs = document.querySelectorAll(".input");
+
+function focusFunc() {
+  let parent = this.parentNode;
+  parent.classList.add("focus");
+}
+
+function blurFunc() {
+  let parent = this.parentNode;
+  if (this.value == "") {
+    parent.classList.remove("focus");
+  }
+}
+
+inputs.forEach((input) => {
+  input.addEventListener("focus", focusFunc);
+  input.addEventListener("blur", blurFunc);
+});
+
+
 // Insert copies of the first few cards to end of carousel for infinite scrolling
 carouselChildrens.slice(0, cardPerView).forEach((card) => {
 	carousel.insertAdjacentHTML("beforeend", card.outerHTML);
